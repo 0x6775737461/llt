@@ -5,8 +5,8 @@
 static void usage(void);
 static int param_checker(const char *);
 
-double farenheit(double);
-double celsius(double);
+static double farenheit(double);
+static double celsius(double);
 
 int main(int argc, char *argv[]){
 	//select the function to convert, according to param
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 
-void usage(void) {
+static void usage(void) {
 	fprintf(stderr, "\rUsage:\n"
 					"\r\t# Converting Celsius to Farenheit\n"
 					"\r\t$ ./llt -cf [0-9]\n\n"
@@ -42,7 +42,7 @@ void usage(void) {
 					"\r\t$ ./llt -fc [0-9]\n\n");
 }
 
-int param_checker(const char *param) {
+static int param_checker(const char *param) {
 	const char *valid_params[2] = {"-cf", "-fc"};
 
 	//i == number of func converter
@@ -61,15 +61,15 @@ int param_checker(const char *param) {
 //Converters
 //
 
-double farenheit(double celsius) {
-	double converted = (9.0 / 5 * celsius + 32);
+static double farenheit(double celsius) {
+	double converted = 9.0 * celsius / 5.0 + 32;
 	printf("[%10.2fºC]\t[%10.2fºF]\n", celsius, converted);
 
 	return converted;
 }
 
-double celsius(double farenheit) {
-	double converted = 5.0 / 9 * (farenheit - 32);
+static double celsius(double farenheit) {
+	double converted = (farenheit - 32) * 5.0 / 9.0;
 	printf("[%10.2fºF]\t[%10.2fºC]\n", farenheit, converted);
 
 	return converted;
