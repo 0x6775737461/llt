@@ -5,14 +5,14 @@
 static void usage(void);
 static int param_checker(const char *);
 
-static double farenheit(double);
-static double celsius(double);
+static float farenheit(float);
+static float celsius(float);
 
 int main(int argc, char *argv[]){
 	//select the function to convert, according to param
-	double (*conv_pick[2])(double) = {farenheit, celsius};
+	float (*conv_pick[2])(float) = {farenheit, celsius};
 	char *check = NULL;
-	double converted, n;
+	float n;
 
 	//TODO: if argc < 2 the programs broke
 	int valid_param = param_checker(argv[1]);
@@ -28,8 +28,7 @@ int main(int argc, char *argv[]){
 		return EXIT_FAILURE;
 	}
 	
-	//this attribute should be used in future versions
-	converted = conv_pick[valid_param](n);
+	conv_pick[valid_param](n);
 
 	return 0;
 }
@@ -61,15 +60,15 @@ static int param_checker(const char *param) {
 //Converters
 //
 
-static double farenheit(double celsius) {
-	double converted = 9.0 * celsius / 5.0 + 32;
+static float farenheit(float celsius) {
+	float converted = 9.0 * celsius / 5.0 + 32;
 	printf("[%10.2fºC]\t[%10.2fºF]\n", celsius, converted);
 
 	return converted;
 }
 
-static double celsius(double farenheit) {
-	double converted = (farenheit - 32) * 5.0 / 9.0;
+static float celsius(float farenheit) {
+	float converted = (farenheit - 32) * 5.0 / 9.0;
 	printf("[%10.2fºF]\t[%10.2fºC]\n", farenheit, converted);
 
 	return converted;
