@@ -14,9 +14,13 @@ int main(int argc, char *argv[]){
 	char *check = NULL;
 	float n;
 
-	//TODO: if argc < 2 the programs broke
+	if(argc != 3){
+		usage();
+		return EXIT_FAILURE;
+	}
+
 	int valid_param = param_checker(argv[1]);
-	if(argc != 3 || !(valid_param >= 0)) {
+	if(!(valid_param >= 0)) {
 		usage();
 		return EXIT_FAILURE;
 	}
