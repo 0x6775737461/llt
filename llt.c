@@ -39,10 +39,10 @@ int main(int argc, char *argv[]){
 
 static void usage(void) {
 	fprintf(stderr, "\rUsage:\n"
-					"\r\t# Converting Celsius to Farenheit\n"
-					"\r\t$ ./llt -cf [0-9]\n\n"
-					"\r\t# Converting Farenheit to Celsius\n"
-					"\r\t$ ./llt -fc [0-9]\n\n");
+					"\r# Converting Celsius to Farenheit\n"
+					"\r$ ./llt -cf [0-9]\n\n"
+					"\r# Converting Farenheit to Celsius\n"
+					"\r$ ./llt -fc [0-9]\n\n");
 }
 
 static int param_checker(const char *param) {
