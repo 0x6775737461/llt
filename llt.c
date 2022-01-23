@@ -24,7 +24,8 @@ int main(int argc, char *argv[]){
 		usage();
 		return EXIT_FAILURE;
 	}
-		
+	
+	//converting string to float
 	n = strtod(argv[2], &check);
 	if(*check) {
 		fprintf(stderr,
@@ -64,6 +65,10 @@ static int param_checker(const char *param) {
 //Converters
 //
 
+//TODO: this function should call all farenheit related converters
+//ex:
+//farenheit() -> ( f2c() || f2k() )
+//c: celsius; k: kelvin
 static float farenheit(float celsius) {
 	float converted = 9.0 * celsius / 5.0 + 32;
 	printf("[%10.2fºC]\t[%10.2fºF]\n", celsius, converted);
