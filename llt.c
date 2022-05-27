@@ -71,14 +71,14 @@ static int param_checker(const char *param) {
 //c: celsius; k: kelvin
 static float farenheit(float celsius) {
 	float converted = 9.0 * celsius / 5.0 + 32;
-	printf("[%10.2fºC]\t[%10.2fºF]\n", celsius, converted);
+	printf("[%10.2f ºC]\t[%10.2f ºF]\n", celsius, converted);
 
 	return converted;
 }
 
 static float celsius(float farenheit) {
 	float converted = (farenheit - 32) * 5.0 / 9.0;
-	printf("[%10.2fºF]\t[%10.2fºC]\n", farenheit, converted);
+	printf("[%10.2fº F]\t[%10.2f ºC]\n", farenheit, converted);
 
 	return converted;
 }
